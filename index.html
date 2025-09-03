@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trincomalee - Pearl of the East</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            secondary: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+              800: '#92400e',
+              900: '#78350f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    /* Hover effects */
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Gradient overlay for hero */
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(14, 165, 233, 0.3));
+    }
+  </style>
+</head>
+<body class="font-body text-gray-700 bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="text-2xl font-heading font-bold text-primary-700">Trincomalee</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#" class="text-primary-700 font-medium border-b-2 border-primary-700 px-3 py-2">Home</a>
+            <a href="attractions.html" class="text-gray-600 hover:text-primary-700 font-medium px-3 py-2">Attractions</a>
+            <a href="#" class="text-gray-600 hover:text-primary-700 font-medium px-3 py-2">News & Events</a>
+            <a href="food.html" class="text-gray-600 hover:text-primary-700 font-medium px-3 py-2">Food & Stay</a>
+            <a href="#" class="text-gray-600 hover:text-primary-700 font-medium px-3 py-2">Services</a>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button type="button" class="bg-primary-700 text-white p-2 rounded-md">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-center pt-16" style="background-image: url('img/trincomalee.jpg');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 bg-white/10 backdrop-blur-sm p-10 rounded-2xl text-center text-white max-w-3xl border border-white/20 animate-fade-in">
+      <h1 class="text-4xl md:text-6xl font-heading font-bold mb-4">Welcome to Trincomalee</h1>
+      <p class="text-xl md:text-2xl mb-8">Pearl of the East – Discover | Experience | Connect</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-primary-600 hover:bg-primary-700 px-8 py-4 rounded-xl shadow-lg font-medium transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+          <a href="attractions.html ">
+            <i class="fas fa-compass"></i> Explore Attractions
+          </a>
+        </button>
+        <button class="bg-secondary-500 hover:bg-secondary-600 px-8 py-4 rounded-xl shadow-lg font-medium transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+          <i class="fas fa-newspaper"></i> Community Updates
+        </button>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+      <a href="#quick-info" class="text-white animate-bounce">
+        <i class="fas fa-chevron-down text-3xl"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Quick Info Section -->
+  <section id="quick-info" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center card-hover group animate-fade-in delay-100">
+        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+          <i class="fas fa-umbrella-beach text-3xl text-primary-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Attractions</h3>
+        <p class="text-gray-600 text-sm">Discover breathtaking beaches, historic temples, and natural wonders</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center card-hover group animate-fade-in delay-200">
+        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+          <i class="fas fa-newspaper text-3xl text-primary-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">News & Events</h3>
+        <p class="text-gray-600 text-sm">Stay updated with local happenings and cultural festivals</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center card-hover group animate-fade-in delay-300">
+        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+          <i class="fas fa-utensils text-3xl text-primary-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Food & Stay</h3>
+        <p class="text-gray-600 text-sm">Find the best accommodations and culinary experiences</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-2xl p-6 text-center card-hover group animate-fade-in">
+        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+          <i class="fas fa-hospital text-3xl text-primary-600"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">Community Services</h3>
+        <p class="text-gray-600 text-sm">Access essential services and community resources</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Attractions -->
+  <section class="bg-gradient-to-b from-blue-50 to-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-800 mb-4">Top Attractions</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explore the most beautiful and culturally significant destinations in Trincomalee</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group">
+          <div class="overflow-hidden">
+            <img src="img/nilaveli.avif" alt="Nilaveli Beach" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Nilaveli Beach</h3>
+            <p class="text-sm text-gray-600 mb-4">Pristine white sands and crystal clear waters make this one of Sri Lanka's most beautiful beaches.</p>
+            <a href="#" class="text-primary-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+              Explore more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group">
+          <div class="overflow-hidden">
+            <img src="img/konesar.jpg" alt="Koneswaram Temple" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Koneswaram Temple</h3>
+            <p class="text-sm text-gray-600 mb-4">Historic Hindu temple with breathtaking views of the Indian Ocean from Swami Rock.</p>
+            <a href="#" class="text-primary-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+              Explore more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover group">
+          <div class="overflow-hidden">
+            <img src="img/pegon.JPG" alt="Pigeon Island" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Pigeon Island</h3>
+            <p class="text-sm text-gray-600 mb-4">A beautiful national park with spectacular coral reefs perfect for snorkeling and diving.</p>
+            <a href="#" class="text-primary-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+              Explore more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-primary-600 text-primary-600 rounded-full hover:bg-primary-600 hover:text-white transition-all font-medium">
+          View All Attractions <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Updates -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-800 mb-4">Community Updates</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Stay informed about the latest events and news in Trincomalee</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gradient-to-r from-primary-50 to-blue-50 shadow-lg rounded-2xl p-6 card-hover border-l-4 border-secondary-500">
+          <div class="flex items-start mb-4">
+            <div class="bg-secondary-100 text-secondary-700 rounded-lg p-3 mr-4">
+              <i class="fas fa-music text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1 text-gray-800">Upcoming Festival</h3>
+              <p class="text-sm text-secondary-600">September 15-17, 2025</p>
+            </div>
+          </div>
+          <p class="text-gray-600">Don't miss the grand Trinco Cultural Festival this September at Fort Frederick grounds featuring traditional music, dance, and local cuisine.</p>
+          <a href="#" class="inline-block mt-4 text-primary-600 font-medium flex items-center gap-2">
+            Learn more <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+        <div class="bg-gradient-to-r from-primary-50 to-blue-50 shadow-lg rounded-2xl p-6 card-hover border-l-4 border-primary-500">
+          <div class="flex items-start mb-4">
+            <div class="bg-primary-100 text-primary-700 rounded-lg p-3 mr-4">
+              <i class="fas fa-heartbeat text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-1 text-gray-800">Health Camp</h3>
+              <p class="text-sm text-primary-600">October 5, 2025</p>
+            </div>
+          </div>
+          <p class="text-gray-600">Free medical check-up organized by Trincomalee Hospital on Sunday, 10 AM – 4 PM. Specialists available for cardiology, pediatrics, and general medicine.</p>
+          <a href="#" class="inline-block mt-4 text-primary-600 font-medium flex items-center gap-2">
+            Learn more <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-primary-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Stay Updated with Trincomalee</h2>
+      <p class="text-primary-100 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for the latest news, events, and travel tips about Trincomalee</p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-300">
+        <button type="submit" class="bg-secondary-500 hover:bg-secondary-600 px-6 py-3 rounded-lg font-medium transition-colors">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-heading font-bold mb-4">Trincomalee</h3>
+          <p class="text-gray-400">Pearl of the East – Discover the beauty, culture, and hospitality of Trincomalee</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Attractions</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Accommodation</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Transportation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Travel Guide</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Maps & Directions</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Emergency Contacts</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+          <div class="flex space-x-4 mb-4">
+            <a href="#" class="bg-gray-800 hover:bg-primary-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="bg-gray-800 hover:bg-primary-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <p class="text-gray-400">contact@trincomalee.com</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+        <p>© 2025 Trincomalee Community & Tourism Portal. All rights reserved.</p>
+        <p class="mt-2">Designed with ❤️ for locals & visitors</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
